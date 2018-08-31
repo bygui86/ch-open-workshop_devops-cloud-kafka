@@ -1,0 +1,25 @@
+---
+- name: create docker network
+  command: "docker network create cryptowatch"
+  become: yes
+
+- name: start zipkin
+  command: "{{ dest_folder }}/sink/startZipkin.sh"
+  become: yes
+
+- name: start kafka
+  command: "{{ dest_folder }}/sink/startKafka.sh"
+  become: yes
+
+- name: start keycloak
+  command: "{{ dest_folder }}/sink/startKeycloak.sh"
+  become: yes
+
+- name: create sink artefact
+  command: "mvn -s {{ dest_folder }}/sink/settings.xml -f {{ dest_folder }}/sink/pom.xml clean install"
+
+- name: create cockpit artefact
+  command: "{{ dest_folder }}/cockpit/start.sh"
+
+- name: install nightwatch for UI tests
+  shell: "npm install nightwatch -g"

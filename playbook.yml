@@ -1,0 +1,27 @@
+- hosts: basicSetUp
+
+  vars:
+    dest_dir: '/home/{{ ansible_user }}'
+
+  roles:
+  - role: vim
+  - role: jdk
+  - role: maven
+  - role: curl
+  - role: npm
+  - role: docker
+  - role: docker_compose
+  - role: chromium
+  - role: remove_favorites
+
+  - role: oc
+    dest_folder: '{{ dest_dir }}/oc'
+
+  - role: checkout_demo_app
+    dest_folder: '{{ dest_dir }}/projects'
+
+  - role: intellij
+    dest_folder: '{{ dest_dir }}/Schreibtisch'
+
+  - role: start_demo_app
+    dest_folder: '{{ dest_dir }}/projects'

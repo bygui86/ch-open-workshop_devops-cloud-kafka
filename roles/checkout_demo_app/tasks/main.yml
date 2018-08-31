@@ -1,0 +1,15 @@
+---
+- name: checkout backend (sink)
+  git:
+    repo: 'https://github.com/khinkali/sink'
+    dest: '{{ dest_folder }}/sink'
+
+- name: checkout frontend (cockpit)
+  git:
+    repo: 'https://github.com/khinkali/cockpit'
+    dest: '{{ dest_folder }}/cockpit'
+
+- name: checkout local keycloak settings
+  git:
+    repo: 'https://github.com/khinkali/keycloakdata'
+    dest: '/home/{{ ansible_user }}/keycloakdata'
