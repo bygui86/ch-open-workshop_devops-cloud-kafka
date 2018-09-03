@@ -23,5 +23,7 @@
   - role: intellij
     dest_folder: '{{ dest_dir }}/Schreibtisch'
 
+  - role: wildfly
+
   - role: start_demo_app
     dest_folder: '{{ dest_dir }}/projects'

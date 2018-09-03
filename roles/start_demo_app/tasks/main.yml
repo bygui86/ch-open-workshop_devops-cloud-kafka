@@ -18,6 +18,12 @@
 - name: create sink artefact
   command: "mvn -s {{ dest_folder }}/sink/settings.xml -f {{ dest_folder }}/sink/pom.xml clean install"
 
+- name: run npm install
+  command: "npm install {{ dest_folder }}/cockpit"
+
+- name: move node_modules
+  shell: "mv node_modules {{ dest_folder }}/cockpit/"
+
 - name: create cockpit artefact
   command: "{{ dest_folder }}/cockpit/start.sh"
 

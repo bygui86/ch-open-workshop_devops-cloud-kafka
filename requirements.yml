@@ -39,6 +39,10 @@
   scm: git
   name: remove_favorites
 
+- src: https://git.adesso.ch/ansible/wildfly
+  scm: git
+  name: wildfly
+
 - src: https://github.com/adessoAnsible/oc
   scm: git
   name: oc
