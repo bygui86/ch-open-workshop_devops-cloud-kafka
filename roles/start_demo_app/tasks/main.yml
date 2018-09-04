@@ -11,6 +11,14 @@
   command: "{{ dest_folder }}/sink/startKafka.sh"
   become: yes
 
+- name: add kafka host entry
+  lineinfile:
+    path: "/etc/hosts"
+    regexp: '127\.0\.0\.1       localhost'
+    insertafter: '127.0.0.1       localhost'
+    line: '127.0.0.1       kafka'
+  become: yes
+
 - name: start keycloak
   command: "{{ dest_folder }}/sink/startKeycloak.sh"
   become: yes
