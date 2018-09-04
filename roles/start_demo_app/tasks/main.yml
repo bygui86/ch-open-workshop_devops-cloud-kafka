@@ -37,3 +37,6 @@
 
 - name: install nightwatch for UI tests
   shell: "npm install nightwatch -g"
+
+- name: reboot
+  command: "/sbin/reboot"
