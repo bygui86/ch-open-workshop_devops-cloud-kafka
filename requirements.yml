@@ -46,3 +46,7 @@
 - src: https://github.com/adessoAnsible/oc
   scm: git
   name: oc
+
+- src: https://git.adesso.ch/ansible/kubectl
+  scm: git
+  name: kubectl
