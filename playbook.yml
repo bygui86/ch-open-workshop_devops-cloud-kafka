@@ -25,8 +25,8 @@
 
   - role: wildfly
 
-  - role: start_demo_app
-    dest_folder: '{{ dest_dir }}/projects'
-
   - role: kubectl
     dest_folder: '{{ dest_dir }}/kubectl'
+
+  - role: start_demo_app
+    dest_folder: '{{ dest_dir }}/projects'
